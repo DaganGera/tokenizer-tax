@@ -60,3 +60,7 @@ No estimated numbers in place of measured ones; no dropping languages or models 
 
 ## Deviations
 (none yet)
+
+### 2026-11-14 — Llama 3.2 replaced by Sarvam-1
+Meta's gated access for Llama 3.2 was not obtainable (the request form asks for an affiliation we did not provide). We did not use ungated third-party mirrors of the weights, to avoid sidestepping the gate. Replacement third family: `sarvamai/sarvam-1` (2.5B, Indic-focused tokenizer, ungated; confirmed 2,525,087,744 params via HF metadata). No same-tokenizer small sibling is known, so for M4 Sarvam-1 is tested with prompt-lookup/n-gram drafting only (not draft-model speculation). This was decided after seeing M1 token counts for Qwen3.5/Gemma 4 but before any energy data; Sarvam-1's M1 numbers are reported whatever they are.
+Also: Gemma-4 target size (E2B vs E4B) still to be decided in M2 from T4 memory fit. M1 ratios use sum of tokens over the 200 sentences (per-sentence median ratio also stored in results/m1_token_counts.json).
