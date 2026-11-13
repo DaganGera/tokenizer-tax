@@ -1,0 +1,62 @@
+# Pre-registration: Energy cost of the tokenizer tax in memory-bound decoding (Indian languages)
+
+Written before any data was looked at or measured. Status of each item is marked **[verified]** or **[TO VERIFY]**.
+Nothing below has been measured yet.
+
+## Questions and hypotheses
+
+- **H1 (token tax).** Per tokenizer, the median tokens-per-sentence ratio vs English exceeds 1.5x for most of the 10 Indian languages.
+  *Falsified if* the best tokenizer is <1.5x for a majority (>=6/10) of languages. (GO/NO-GO 1; the story then becomes "which tokenizer choices still impose a tax".)
+- **H2 (energy follows tokens).** In teacher-forced decoding at batch size 1, joules per sentence is linear in tokens per sentence, so joules per *token* is roughly constant across languages.
+  *Falsified if* a per-model fit of J/sentence on tokens/sentence has R^2 < 0.9, or if the per-language median J/token differs from English by more than 15% (bootstrap CI excluding that band) for most languages.
+- **H3 (energy ratio = token ratio).** The ratio of J/sentence to English is within 15% of the token-count ratio, per language and model.
+  *Falsified if* the ratio of ratios lies outside [0.85, 1.15] for most languages. Latency is tested the same way.
+- **H4 (model dependence).** The energy ratio vs English differs by model family because tokenizers differ.
+  *Falsified if* the max-min spread of ratios across models is <10% of the mean for most languages.
+- **H5 (speculative decoding).** Speculative decoding reduces J/sentence for English; acceptance rate is lower for Indian languages, so the Indian/English energy gap *widens*.
+  *Falsified if* the gap shrinks or is unchanged (bootstrap CI of the change includes 0). Either outcome is reported as found.
+  Exactness check: greedy output with and without speculation must be token-identical; mismatches are counted and reported, not hidden.
+
+## Metrics
+
+Tokens/sentence, chars/token, ratio to English; J/sentence, J/token, ms/sentence (raw and idle-subtracted); acceptance rate; R^2 and slope of J vs tokens. Medians over 3+ repeats with bootstrap 95% CI (10,000 resamples).
+GO/NO-GO 2: repeats of the same configuration agree within ~5% (relative spread of the median).
+
+## Data
+
+FLORES+ devtest (`openlanguagedata/flores_plus`, gated, needs HF token + accepting terms) [TO VERIFY access; fallback `facebook/flores` FLORES-200].
+Languages: eng_Latn, hin_Deva, ben_Beng, tam_Taml, tel_Telu, mar_Deva, guj_Gujr, kan_Knda, mal_Mlym, pan_Guru, ory_Orya.
+**Sentence IDs** (fixed now, in `sentence_ids.json`): 200 indices into the 1012-sentence devtest, `sorted(random.Random(20261113).sample(range(1012), 200))`. The same indices are used for every language. Sentences are never selected by looking at the data.
+If a sentence cannot be handled in some language, it is reported, not silently dropped.
+
+## Models [all TO VERIFY: exact HF IDs, licences, fp16 fit on a 16 GB T4, transformers support]
+
+Candidates (IDs come from secondary web sources only):
+| Family | Target | Draft (same tokenizer) |
+|---|---|---|
+| Qwen3.5 | `Qwen/Qwen3.5-4B` | `Qwen/Qwen3.5-0.8B` |
+| Gemma 4 | `google/gemma-4-E4B-it` or `E2B-it` | smaller E2B or Google's dedicated draft model |
+| Llama 3.2 | `meta-llama/Llama-3.2-3B-Instruct` (gated) | `meta-llama/Llama-3.2-1B-Instruct` |
+
+Known risks, to be checked before M2: Qwen3.5 may use a hybrid (linear-attention) architecture whose cache does not behave like a plain KV cache and may not support HF assisted generation; Gemma 4 "E" models carry large per-layer embedding tables so "effective" and total parameters differ. Reported draft size will be the counted `sum(p.numel())`, not the marketing name. If a family fails, it is replaced and the replacement is recorded in git history.
+
+## Measurement protocol
+
+Hardware: Kaggle T4, fp16 (recorded: GPU name, driver, clocks, temperature, versions).
+Energy: `pynvml.nvmlDeviceGetTotalEnergyConsumption` (mJ), differenced around each run after `torch.cuda.synchronize()`. Fallback: >=20 Hz power sampling, integrated.
+Idle power measured before each batch of runs; both raw and idle-subtracted reported.
+Teacher-forced decode: fixed short prompt, then the reference sentence tokens fed one at a time with KV cache. Batch size 1 (8 if time allows). Warm-up, randomised language order, 3 repeats.
+Prefill-only run measured separately to isolate prompt cost.
+Note: NVML total energy is board-level and has ~10-100 ms update granularity on some parts, so per-sentence energy may be too coarse; if so, sentences are batched into timed blocks (decision recorded before scaling up).
+
+## Mitigation (M4)
+
+HF assisted generation, greedy, task: translate an English FLORES sentence into the target language, fixed prompt and max length. Alternatives if the gap widens: prompt-lookup/n-gram drafting, lowest-tax tokenizer per language.
+`energy_gap_reduction_pct` is defined as `(gap_baseline - gap_spec) / gap_baseline * 100`, where gap = mean over Indian languages of (J/sentence ratio to English). Negative values mean the gap widened and are reported as such.
+
+## What we will not do
+
+No estimated numbers in place of measured ones; no dropping languages or models after seeing results; no changes to the hypotheses above (deviations go in a dated "Deviations" section appended below).
+
+## Deviations
+(none yet)
