@@ -4,8 +4,7 @@ from transformers import AutoTokenizer
 from data import LANGS, load_sentences
 
 # One tokenizer per model family (target and draft share it), plus tiktoken references from the paper.
-HF_TOKENIZERS = {"qwen3.5": "Qwen/Qwen3.5-4B", "gemma4": "google/gemma-4-E2B-it",
-                 "llama3.2": "meta-llama/Llama-3.2-3B-Instruct"}
+HF_TOKENIZERS = {"qwen3.5": "Qwen/Qwen3.5-4B", "gemma4": "google/gemma-4-E2B-it"}
 TIKTOKEN = ["cl100k_base", "o200k_base"]
 
 def get_encoders():
