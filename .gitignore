@@ -2,3 +2,8 @@
 __pycache__/
 *.pyc
 .env
+kaggle/dataset/flores_plus_subset.json
+kaggle/out*/
+kaggle/pulled/
+kaggle/run/nb.ipynb
+*.partial

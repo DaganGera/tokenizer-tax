@@ -7,6 +7,8 @@ IDS = json.load(open(pathlib.Path(__file__).parent.parent / "sentence_ids.json")
 
 def load_sentences(lang):
     """Return the 200 pre-registered devtest sentences for `lang` (FLORES+ jsonl)."""
+    local = pathlib.Path("/kaggle/input/flores-plus-indic-subset/flores_plus_subset.json")  # private Kaggle copy of the 200 chosen sentences
+    if local.exists(): return json.load(open(local, encoding="utf-8"))[lang]
     p = hf_hub_download("openlanguagedata/flores_plus", f"devtest/{lang}.jsonl", repo_type="dataset")
     rows = [json.loads(l) for l in open(p, encoding="utf-8")]
     rows.sort(key=lambda r: r["id"])           # id = position in devtest, same across languages

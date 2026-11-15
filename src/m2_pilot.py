@@ -15,22 +15,27 @@ def main():
     a.add_argument("--repeats", type=int, default=3); a.add_argument("--langs", default=",".join(LANGS))
     a.add_argument("--out", default="results/m2_pilot.json"); a = a.parse_args()
     tok = AutoTokenizer.from_pretrained(a.model)
-    model = AutoModelForCausalLM.from_pretrained(a.model, torch_dtype=torch.float16).cuda().eval()
+    model = AutoModelForCausalLM.from_pretrained(a.model, dtype=torch.float16).cuda().eval()
     meter = Meter(); langs = a.langs.split(",")
     ids = {l: [tok.encode(s, add_special_tokens=False) for s in load_sentences(l)[:a.n]] for l in langs}
     prompt = torch.tensor([tok.encode(PROMPT, add_special_tokens=False)], device="cuda")
     for l in langs[:2]:                                    # warm-up (not recorded)
         for r in ids[l][:3]: teacher_forced_decode(model, prefill(model, prompt), r)
+    pre = []                                               # prefill-only cost of the fixed prompt (separates prompt cost from decode cost)
+    for _ in range(20):
+        with meter as m: prefill(model, prompt)
+        pre.append((m.joules, m.seconds))
     rows, rng = [], random.Random(0)
     for rep in range(a.repeats):
-        idle = meter.idle_power(5)
         order = langs[:]; rng.shuffle(order)               # randomised language order each repeat
         for l in order:
+            idle = meter.idle_power(5)                     # idle board power right before each language block
             for i, r in enumerate(ids[l]):
                 cache = prefill(model, prompt); torch.cuda.synchronize()
                 with meter as m: teacher_forced_decode(model, cache, r)
                 rows.append(dict(rep=rep, lang=l, sent=i, tokens=len(r), joules=m.joules, seconds=m.seconds,
-                                 idle_w=idle, joules_net=m.joules - idle * m.seconds, **{k: v for k, v in meter.info().items() if k in ("sm_clock_mhz", "temp_c")}))
+                                 idle_w=idle, prompt_tokens=prompt.shape[1], joules_net=m.joules - idle * m.seconds, **{k: v for k, v in meter.info().items() if k in ("sm_clock_mhz", "temp_c")}))
+            json.dump(dict(model=a.model, partial=True, rows=rows), open(a.out + ".partial", "w"))
     summ = {}
     for l in langs:
         per_rep = [st.median([x["joules"] for x in rows if x["lang"] == l and x["rep"] == r]) for r in range(a.repeats)]
@@ -39,7 +44,7 @@ def main():
                        rep_spread_pct=100 * (max(per_rep) - min(per_rep)) / st.median(per_rep),
                        mean_tokens=st.mean(x["tokens"] for x in rows if x["lang"] == l and x["rep"] == 0),
                        median_s=st.median(x["seconds"] for x in rows if x["lang"] == l))
-    json.dump(dict(model=a.model, meter=meter.info(), n=a.n, summary=summ, rows=rows), open(a.out, "w"))
+    json.dump(dict(model=a.model, meter=meter.info(), n=a.n, idle_w=[r['idle_w'] for r in rows[:1]], prefill_only=dict(median_j=st.median(p[0] for p in pre), median_s=st.median(p[1] for p in pre), prompt_tokens=prompt.shape[1]), params=sum(p.numel() for p in model.parameters()), summary=summ, rows=rows), open(a.out, "w"))
     for l, s in summ.items(): print(f"{l} tok={s['mean_tokens']:.1f} J={s['median_j']:.3f} CI={s['ci95'][0]:.3f}-{s['ci95'][1]:.3f} spread={s['rep_spread_pct']:.1f}%  s={s['median_s']:.3f}")
 
 if __name__ == "__main__": main()
