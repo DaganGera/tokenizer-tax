@@ -4,6 +4,8 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from transformers.generation import candidate_generator as cg
 from data import LANGS, load_sentences
 from energy import Meter
+from compat import patch_gemma4_assistant
+from transformers import StoppingCriteria, StoppingCriteriaList
 
 NAME = dict(hin_Deva="Hindi", ben_Beng="Bengali", tam_Taml="Tamil", tel_Telu="Telugu", mar_Deva="Marathi", guj_Gujr="Gujarati",
             kan_Knda="Kannada", mal_Mlym="Malayalam", pan_Guru="Punjabi", ory_Orya="Odia", eng_Latn="English")
@@ -11,6 +13,11 @@ MAX_NEW = 160
 
 def prompt_for(lang, src_text, src_name):   # fixed prompt; English target is translated from Hindi (no English->English task)
     return f"Translate the following {src_name} sentence into {NAME[lang]}. Output only the translation.\n{src_name}: {src_text}\n{NAME[lang]}:"
+
+class NewlineStop(StoppingCriteria):        # stop when the last token contains a newline (works for target-only and assisted runs alike)
+    def __init__(self, tok):
+        self.ids = torch.tensor([i for i, t in enumerate(tok.batch_decode([[i] for i in range(len(tok))])) if "\n" in t])
+    def __call__(self, input_ids, scores, **kw): return torch.isin(input_ids[:, -1], self.ids.to(input_ids.device))
 
 class Acc:                                  # records candidate tokens proposed / accepted by the assistant model
     proposed = accepted = 0
@@ -20,20 +27,21 @@ class Acc:                                  # records candidate tokens proposed 
             print("acceptance counter patched on", c.__name__)
             orig = c.update_candidate_strategy
             def f(self, input_ids, scores, num_matches, _o=orig):
-                cls.proposed += int(getattr(self, "num_assistant_tokens", getattr(self, "num_output_tokens", 0)))
+                cls.proposed += int(scores.shape[1]) - 1          # logits cover the candidates plus one bonus position
                 cls.accepted += int(num_matches); return _o(self, input_ids, scores, num_matches)
             c.update_candidate_strategy = f
 
 def main():
     a = argparse.ArgumentParser(); a.add_argument("--model", required=True); a.add_argument("--draft", default=None)
     a.add_argument("--n", type=int, default=30); a.add_argument("--out", required=True); a = a.parse_args()
-    Acc.patch(); tok = AutoTokenizer.from_pretrained(a.model)
+    Acc.patch(); patch_gemma4_assistant(); tok = AutoTokenizer.from_pretrained(a.model)
     load = lambda r: AutoModelForCausalLM.from_pretrained(r, dtype=torch.float16).cuda().eval()
     model = load(a.model); draft = load(a.draft) if a.draft else None; meter = Meter()
     sent = {l: load_sentences(l)[:a.n] for l in LANGS}
     methods = {"baseline": {}, "prompt_lookup": dict(prompt_lookup_num_tokens=10)}
     if draft: methods["draft"] = dict(assistant_model=draft)
-    gen = lambda ids, kw: model.generate(ids, max_new_tokens=MAX_NEW, do_sample=False, stop_strings=["\n"], tokenizer=tok, pad_token_id=tok.eos_token_id, **kw)
+    nl = NewlineStop(tok)
+    gen = lambda ids, kw: model.generate(ids, max_new_tokens=MAX_NEW, do_sample=False, stopping_criteria=StoppingCriteriaList([nl]), pad_token_id=tok.eos_token_id, **kw)
     first = tok(prompt_for("hin_Deva", sent["eng_Latn"][0], "English"), return_tensors="pt").input_ids.cuda()
     for m in list(methods):                                                        # warm-up; drop methods this model does not support
         try: gen(first, methods[m])
