@@ -1,0 +1,42 @@
+{
+ "num_languages": 11,
+ "num_tokenizers": 5,
+ "max_energy_ratio_vs_english": {
+  "ratio": 3.9212446937021483,
+  "language": "ory_Orya",
+  "model": "Qwen/Qwen3.5-4B"
+ },
+ "energy_gap_reduction_pct": {
+  "value": 23.865206004384188,
+  "ci95": [
+   13.410320540043571,
+   31.619731693362546
+  ],
+  "clean_subset_value": -5.387886215150136,
+  "clean_subset_ci95": [
+   -18.746475754447818,
+   6.7974804270932125
+  ],
+  "indic_energy_change_pct": -45.08009708849645,
+  "english_energy_change_pct": -27.86490902613319,
+  "outputs_identical_to_baseline": "206/220",
+  "method": "draft",
+  "model": "google/gemma-4-E2B-it",
+  "note": "negative = gap widened; see energy_change_pct_* in results/analysis_m4.json before interpreting"
+ },
+ "draft_model_params": 77731328,
+ "hardware": {
+  "gpu": "Tesla T4",
+  "driver": "580.178.04",
+  "energy_meter": "counter",
+  "gpus_visible_to_job": 2,
+  "gpus_used": 1
+ },
+ "software": {
+  "flash-linear-attention": "0.6.0",
+  "torch": "2.11.0+cu130",
+  "transformers": "5.23.0",
+  "triton": "3.6.0",
+  "note": "from pip list in the stage-1 Kaggle T4 pilot job (python 3.13 image); later runs executed pip install -U, so patch versions may differ"
+ }
+}

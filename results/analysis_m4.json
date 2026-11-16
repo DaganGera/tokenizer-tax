@@ -1,0 +1,1476 @@
+[
+ {
+  "clean_subset": false,
+  "n_sentences_kept": 220,
+  "model": "google/gemma-4-E2B-it",
+  "draft": "google/gemma-4-E2B-it-assistant",
+  "draft_params": 77731328,
+  "unsupported": [],
+  "methods": {
+   "baseline": {
+    "per_lang": {
+     "ben_Beng": {
+      "mean_j": 150.01365000000806,
+      "mean_s": 2.6164805902998522,
+      "new_tokens": 33.95,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "eng_Latn": {
+      "mean_j": 142.44475000000094,
+      "mean_s": 2.4478075797500423,
+      "new_tokens": 31.8,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "guj_Gujr": {
+      "mean_j": 390.32019999999903,
+      "mean_s": 6.532999634800035,
+      "new_tokens": 85.3,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "hin_Deva": {
+      "mean_j": 162.3734000000055,
+      "mean_s": 2.8384350952499515,
+      "new_tokens": 36.85,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "kan_Knda": {
+      "mean_j": 468.9316499999783,
+      "mean_s": 7.739324922749892,
+      "new_tokens": 101.15,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "mal_Mlym": {
+      "mean_j": 270.1186999999976,
+      "mean_s": 4.502022498549832,
+      "new_tokens": 58.75,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "mar_Deva": {
+      "mean_j": 274.81175000001093,
+      "mean_s": 4.6132175854500925,
+      "new_tokens": 60.15,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "ory_Orya": {
+      "mean_j": 205.7013500000059,
+      "mean_s": 3.4199359624502903,
+      "new_tokens": 44.6,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "pan_Guru": {
+      "mean_j": 501.042300000001,
+      "mean_s": 8.287804343599873,
+      "new_tokens": 108.0,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "tam_Taml": {
+      "mean_j": 244.17480000000796,
+      "mean_s": 4.047464900150135,
+      "new_tokens": 52.95,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "tel_Telu": {
+      "mean_j": 374.52039999999107,
+      "mean_s": 6.296681016850107,
+      "new_tokens": 82.0,
+      "acceptance": 0.0,
+      "identical": 1.0
+     }
+    },
+    "gap": 2.135570598424993,
+    "identical_total": "220/220",
+    "total_j": 63689.059000000125
+   },
+   "draft": {
+    "per_lang": {
+     "ben_Beng": {
+      "mean_j": 132.86649999998627,
+      "mean_s": 2.732753221400253,
+      "new_tokens": 34.55,
+      "acceptance": 0.08692365835222977,
+      "identical": 0.95
+     },
+     "eng_Latn": {
+      "mean_j": 102.75264999999781,
+      "mean_s": 1.963155486999949,
+      "new_tokens": 31.95,
+      "acceptance": 0.16084656084656085,
+      "identical": 0.9
+     },
+     "guj_Gujr": {
+      "mean_j": 219.40384999998497,
+      "mean_s": 4.468417805900026,
+      "new_tokens": 85.35,
+      "acceptance": 0.21692518248175183,
+      "identical": 0.95
+     },
+     "hin_Deva": {
+      "mean_j": 125.86555000000517,
+      "mean_s": 2.5427406322502977,
+      "new_tokens": 36.9,
+      "acceptance": 0.12449310624493107,
+      "identical": 0.9
+     },
+     "kan_Knda": {
+      "mean_j": 275.54790000000503,
+      "mean_s": 5.747185732050002,
+      "new_tokens": 101.15,
+      "acceptance": 0.1855779427359491,
+      "identical": 1.0
+     },
+     "mal_Mlym": {
+      "mean_j": 127.93274999999558,
+      "mean_s": 2.6058912460498505,
+      "new_tokens": 58.9,
+      "acceptance": 0.29103885804916735,
+      "identical": 0.85
+     },
+     "mar_Deva": {
+      "mean_j": 176.91604999998816,
+      "mean_s": 3.6008200779999244,
+      "new_tokens": 60.15,
+      "acceptance": 0.169327251995439,
+      "identical": 1.0
+     },
+     "ory_Orya": {
+      "mean_j": 61.41835000000428,
+      "mean_s": 1.1426322831503057,
+      "new_tokens": 44.6,
+      "acceptance": 0.6600189933523267,
+      "identical": 1.0
+     },
+     "pan_Guru": {
+      "mean_j": 202.24705000001123,
+      "mean_s": 4.1193279759499095,
+      "new_tokens": 108.05,
+      "acceptance": 0.3663168415792104,
+      "identical": 0.95
+     },
+     "tam_Taml": {
+      "mean_j": 164.14874999999302,
+      "mean_s": 3.319278871950155,
+      "new_tokens": 53.0,
+      "acceptance": 0.1541318477251625,
+      "identical": 0.95
+     },
+     "tel_Telu": {
+      "mean_j": 184.32120000000577,
+      "mean_s": 3.7908106712998233,
+      "new_tokens": 80.2,
+      "acceptance": 0.25963871663521165,
+      "identical": 0.85
+     }
+    },
+    "gap": 1.6259122757418083,
+    "identical_total": "206/220",
+    "total_j": 35468.411999999546,
+    "gap_reduction_pct": 23.865206004384188,
+    "gap_reduction_ci95": [
+     13.410320540043571,
+     31.619731693362546
+    ],
+    "energy_change_pct_indic": -45.08009708849645,
+    "energy_change_pct_english": -27.86490902613319
+   },
+   "prompt_lookup": {
+    "per_lang": {
+     "ben_Beng": {
+      "mean_j": 120.08930000001564,
+      "mean_s": 2.0182789526001215,
+      "new_tokens": 33.95,
+      "acceptance": 0.17731277533039647,
+      "identical": 1.0
+     },
+     "eng_Latn": {
+      "mean_j": 129.40719999999857,
+      "mean_s": 2.2058380813502483,
+      "new_tokens": 32.0,
+      "acceptance": 0.05255878284923928,
+      "identical": 0.95
+     },
+     "guj_Gujr": {
+      "mean_j": 163.01455000001587,
+      "mean_s": 2.7666617827499977,
+      "new_tokens": 81.85,
+      "acceptance": 0.3719438877755511,
+      "identical": 0.9
+     },
+     "hin_Deva": {
+      "mean_j": 138.94044999998877,
+      "mean_s": 2.374392847049785,
+      "new_tokens": 36.9,
+      "acceptance": 0.10822147651006711,
+      "identical": 0.9
+     },
+     "kan_Knda": {
+      "mean_j": 170.53875000000116,
+      "mean_s": 2.829761722549847,
+      "new_tokens": 101.2,
+      "acceptance": 0.4857997010463378,
+      "identical": 0.95
+     },
+     "mal_Mlym": {
+      "mean_j": 84.13760000000475,
+      "mean_s": 1.4283068073998948,
+      "new_tokens": 58.5,
+      "acceptance": 0.5531914893617021,
+      "identical": 0.8
+     },
+     "mar_Deva": {
+      "mean_j": 138.13929999999817,
+      "mean_s": 2.29442341210015,
+      "new_tokens": 60.25,
+      "acceptance": 0.39728682170542634,
+      "identical": 0.9
+     },
+     "ory_Orya": {
+      "mean_j": 27.176499999983935,
+      "mean_s": 0.43531364744967505,
+      "new_tokens": 44.6,
+      "acceptance": 0.8097207859358841,
+      "identical": 1.0
+     },
+     "pan_Guru": {
+      "mean_j": 135.20179999999237,
+      "mean_s": 2.290948298949843,
+      "new_tokens": 102.95,
+      "acceptance": 0.4850574712643678,
+      "identical": 0.9
+     },
+     "tam_Taml": {
+      "mean_j": 113.74304999999586,
+      "mean_s": 1.9497047609999754,
+      "new_tokens": 53.25,
+      "acceptance": 0.38613188307273966,
+      "identical": 0.9
+     },
+     "tel_Telu": {
+      "mean_j": 129.59664999999805,
+      "mean_s": 2.16020375299986,
+      "new_tokens": 74.65,
+      "acceptance": 0.5042964554242749,
+      "identical": 0.9
+     }
+    },
+    "gap": 0.9432071399427605,
+    "identical_total": "202/220",
+    "total_j": 26999.702999999863,
+    "gap_reduction_pct": 55.833483536513086,
+    "gap_reduction_ci95": [
+     46.87733394732973,
+     62.202972194845934
+    ],
+    "energy_change_pct_indic": -59.87591519312827,
+    "energy_change_pct_english": -9.152706575709024
+   }
+  }
+ },
+ {
+  "clean_subset": false,
+  "n_sentences_kept": 220,
+  "model": "Qwen/Qwen3-4B",
+  "draft": "Qwen/Qwen3-0.6B",
+  "draft_params": 596049920,
+  "unsupported": [],
+  "methods": {
+   "baseline": {
+    "per_lang": {
+     "ben_Beng": {
+      "mean_j": 281.62409999999215,
+      "mean_s": 4.286021586299921,
+      "new_tokens": 68.65,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "eng_Latn": {
+      "mean_j": 121.1681000000157,
+      "mean_s": 1.8422614374994737,
+      "new_tokens": 28.7,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "guj_Gujr": {
+      "mean_j": 564.9844500000065,
+      "mean_s": 8.589204229349798,
+      "new_tokens": 139.05,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "hin_Deva": {
+      "mean_j": 546.3019499999821,
+      "mean_s": 8.31277411275023,
+      "new_tokens": 133.6,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "kan_Knda": {
+      "mean_j": 159.50994999997783,
+      "mean_s": 2.4027153550497133,
+      "new_tokens": 37.9,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "mal_Mlym": {
+      "mean_j": 639.854749999952,
+      "mean_s": 9.734237180800028,
+      "new_tokens": 156.65,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "mar_Deva": {
+      "mean_j": 549.8303999999829,
+      "mean_s": 8.353523081700223,
+      "new_tokens": 134.85,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "ory_Orya": {
+      "mean_j": 458.2724499999953,
+      "mean_s": 6.973260168350043,
+      "new_tokens": 112.15,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "pan_Guru": {
+      "mean_j": 621.7558000000078,
+      "mean_s": 9.461468139899988,
+      "new_tokens": 152.1,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "tam_Taml": {
+      "mean_j": 131.7512499999779,
+      "mean_s": 1.981504355600555,
+      "new_tokens": 32.0,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "tel_Telu": {
+      "mean_j": 632.2169999999693,
+      "mean_s": 9.616596749049132,
+      "new_tokens": 154.8,
+      "acceptance": 0.0,
+      "identical": 1.0
+     }
+    },
+    "gap": 3.7849088167589073,
+    "identical_total": "220/220",
+    "total_j": 94145.40399999719
+   },
+   "draft": {
+    "per_lang": {
+     "ben_Beng": {
+      "mean_j": 521.1017500000074,
+      "mean_s": 9.571381297749758,
+      "new_tokens": 79.95,
+      "acceptance": 0.3286735010872942,
+      "identical": 0.8
+     },
+     "eng_Latn": {
+      "mean_j": 452.0847499999974,
+      "mean_s": 8.01721773895024,
+      "new_tokens": 91.0,
+      "acceptance": 0.5070058997050148,
+      "identical": 0.35
+     },
+     "guj_Gujr": {
+      "mean_j": 941.7499500000151,
+      "mean_s": 17.174069709050308,
+      "new_tokens": 140.05,
+      "acceptance": 0.31017067223963773,
+      "identical": 0.8
+     },
+     "hin_Deva": {
+      "mean_j": 805.0744500000204,
+      "mean_s": 14.311321763249543,
+      "new_tokens": 140.6,
+      "acceptance": 0.3943975100044464,
+      "identical": 0.8
+     },
+     "kan_Knda": {
+      "mean_j": 239.90134999998844,
+      "mean_s": 4.3880510492499525,
+      "new_tokens": 44.6,
+      "acceptance": 0.43392226148409896,
+      "identical": 0.85
+     },
+     "mal_Mlym": {
+      "mean_j": 1118.1496500000126,
+      "mean_s": 20.3070168074496,
+      "new_tokens": 157.35,
+      "acceptance": 0.28656097199585123,
+      "identical": 0.9
+     },
+     "mar_Deva": {
+      "mean_j": 853.1270500000101,
+      "mean_s": 15.474041778300489,
+      "new_tokens": 140.7,
+      "acceptance": 0.3640101821029959,
+      "identical": 0.9
+     },
+     "ory_Orya": {
+      "mean_j": 728.4692499999946,
+      "mean_s": 13.668514296600279,
+      "new_tokens": 112.15,
+      "acceptance": 0.3261894556365195,
+      "identical": 0.95
+     },
+     "pan_Guru": {
+      "mean_j": 1230.742149999994,
+      "mean_s": 22.45912785160008,
+      "new_tokens": 153.5,
+      "acceptance": 0.23442057809599576,
+      "identical": 0.8
+     },
+     "tam_Taml": {
+      "mean_j": 254.85209999998915,
+      "mean_s": 4.668847714300045,
+      "new_tokens": 32.0,
+      "acceptance": 0.22724338282763074,
+      "identical": 1.0
+     },
+     "tel_Telu": {
+      "mean_j": 929.6822000000509,
+      "mean_s": 16.774940081150817,
+      "new_tokens": 157.75,
+      "acceptance": 0.37976961843052554,
+      "identical": 0.9
+     }
+    },
+    "gap": 1.6861550627399233,
+    "identical_total": "181/220",
+    "total_j": 161498.6930000016,
+    "gap_reduction_pct": 55.45057637124766,
+    "gap_reduction_ci95": [
+     40.07433127347733,
+     65.08537121757297
+    ],
+    "energy_change_pct_indic": 66.21631472182754,
+    "energy_change_pct_english": 273.1054213113343
+   },
+   "prompt_lookup": {
+    "per_lang": {
+     "ben_Beng": {
+      "mean_j": 234.45359999999056,
+      "mean_s": 3.5855192388499746,
+      "new_tokens": 68.7,
+      "acceptance": 0.039554230105164026,
+      "identical": 0.95
+     },
+     "eng_Latn": {
+      "mean_j": 116.28454999998795,
+      "mean_s": 1.7638004760001422,
+      "new_tokens": 28.6,
+      "acceptance": 0.029900332225913623,
+      "identical": 0.9
+     },
+     "guj_Gujr": {
+      "mean_j": 463.8474999999686,
+      "mean_s": 7.090638333949846,
+      "new_tokens": 140.75,
+      "acceptance": 0.03790849673202614,
+      "identical": 0.95
+     },
+     "hin_Deva": {
+      "mean_j": 496.76424999998414,
+      "mean_s": 7.591589450850006,
+      "new_tokens": 133.6,
+      "acceptance": 0.021279806821611832,
+      "identical": 1.0
+     },
+     "kan_Knda": {
+      "mean_j": 108.96065000002272,
+      "mean_s": 1.6481042553996303,
+      "new_tokens": 44.6,
+      "acceptance": 0.10707241476472246,
+      "identical": 0.9
+     },
+     "mal_Mlym": {
+      "mean_j": 466.6122500000405,
+      "mean_s": 7.1247975444997795,
+      "new_tokens": 156.65,
+      "acceptance": 0.06604333630157316,
+      "identical": 1.0
+     },
+     "mar_Deva": {
+      "mean_j": 378.40840000003226,
+      "mean_s": 5.778643156050203,
+      "new_tokens": 140.7,
+      "acceptance": 0.1001894128202572,
+      "identical": 0.85
+     },
+     "ory_Orya": {
+      "mean_j": 307.01194999999717,
+      "mean_s": 4.678708856549656,
+      "new_tokens": 112.15,
+      "acceptance": 0.07292754724147754,
+      "identical": 0.95
+     },
+     "pan_Guru": {
+      "mean_j": 497.7471999999834,
+      "mean_s": 7.60144254764964,
+      "new_tokens": 152.1,
+      "acceptance": 0.04004368401892974,
+      "identical": 0.9
+     },
+     "tam_Taml": {
+      "mean_j": 116.9385000000184,
+      "mean_s": 1.7768372093003564,
+      "new_tokens": 35.2,
+      "acceptance": 0.043808944326133255,
+      "identical": 0.95
+     },
+     "tel_Telu": {
+      "mean_j": 468.8322999999917,
+      "mean_s": 7.160369217400148,
+      "new_tokens": 157.1,
+      "acceptance": 0.056293081439877456,
+      "identical": 0.9
+     }
+    },
+    "gap": 3.043892417350711,
+    "identical_total": "205/220",
+    "total_j": 73117.22300000035,
+    "gap_reduction_pct": 19.578183657347484,
+    "gap_reduction_ci95": [
+     15.09674467576249,
+     23.64499480942405
+    ],
+    "energy_change_pct_indic": -22.81949850178543,
+    "energy_change_pct_english": -4.030392487814138
+   }
+  }
+ },
+ {
+  "clean_subset": false,
+  "n_sentences_kept": 220,
+  "model": "sarvamai/sarvam-1",
+  "draft": null,
+  "draft_params": null,
+  "unsupported": [],
+  "methods": {
+   "baseline": {
+    "per_lang": {
+     "ben_Beng": {
+      "mean_j": 120.21630000000005,
+      "mean_s": 1.82595757054969,
+      "new_tokens": 48.65,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "eng_Latn": {
+      "mean_j": 82.82589999999618,
+      "mean_s": 1.2551360756501708,
+      "new_tokens": 33.25,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "guj_Gujr": {
+      "mean_j": 128.3695500000089,
+      "mean_s": 1.9517740808501003,
+      "new_tokens": 51.95,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "hin_Deva": {
+      "mean_j": 98.49065000000992,
+      "mean_s": 1.467544352799996,
+      "new_tokens": 38.95,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "kan_Knda": {
+      "mean_j": 113.81904999998514,
+      "mean_s": 1.7318185161000657,
+      "new_tokens": 45.95,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "mal_Mlym": {
+      "mean_j": 124.29915000001783,
+      "mean_s": 1.896181712500038,
+      "new_tokens": 50.45,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "mar_Deva": {
+      "mean_j": 106.44399999998859,
+      "mean_s": 1.6238167625999267,
+      "new_tokens": 43.0,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "ory_Orya": {
+      "mean_j": 118.128549999994,
+      "mean_s": 1.7954095891995165,
+      "new_tokens": 47.75,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "pan_Guru": {
+      "mean_j": 104.07714999999735,
+      "mean_s": 1.5772871738501635,
+      "new_tokens": 41.8,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "tam_Taml": {
+      "mean_j": 114.24790000000503,
+      "mean_s": 1.7285029775501244,
+      "new_tokens": 46.2,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "tel_Telu": {
+      "mean_j": 103.67735000000103,
+      "mean_s": 1.5789347938999527,
+      "new_tokens": 41.95,
+      "acceptance": 0.0,
+      "identical": 1.0
+     }
+    },
+    "gap": 1.3664441316062488,
+    "identical_total": "220/220",
+    "total_j": 24291.91100000008
+   },
+   "prompt_lookup": {
+    "per_lang": {
+     "ben_Beng": {
+      "mean_j": 89.14870000001392,
+      "mean_s": 1.356846248349666,
+      "new_tokens": 48.5,
+      "acceptance": 0.2804020100502513,
+      "identical": 0.95
+     },
+     "eng_Latn": {
+      "mean_j": 82.21300000000629,
+      "mean_s": 1.2336172912499932,
+      "new_tokens": 33.25,
+      "acceptance": 0.037937743190661476,
+      "identical": 1.0
+     },
+     "guj_Gujr": {
+      "mean_j": 112.56700000000419,
+      "mean_s": 1.7173729149501014,
+      "new_tokens": 51.9,
+      "acceptance": 0.10135135135135136,
+      "identical": 0.85
+     },
+     "hin_Deva": {
+      "mean_j": 93.38434999999008,
+      "mean_s": 1.4319920211000863,
+      "new_tokens": 38.85,
+      "acceptance": 0.04418394950405771,
+      "identical": 0.85
+     },
+     "kan_Knda": {
+      "mean_j": 112.55599999999394,
+      "mean_s": 1.6998684102997685,
+      "new_tokens": 45.95,
+      "acceptance": 0.039511494252873564,
+      "identical": 1.0
+     },
+     "mal_Mlym": {
+      "mean_j": 123.11600000000325,
+      "mean_s": 1.8700971109999045,
+      "new_tokens": 50.45,
+      "acceptance": 0.04283604135893648,
+      "identical": 1.0
+     },
+     "mar_Deva": {
+      "mean_j": 91.95834999999497,
+      "mean_s": 1.3896737760997895,
+      "new_tokens": 43.05,
+      "acceptance": 0.12767710049423395,
+      "identical": 0.85
+     },
+     "ory_Orya": {
+      "mean_j": 119.06584999999032,
+      "mean_s": 1.8177292282500275,
+      "new_tokens": 47.7,
+      "acceptance": 0.027065527065527065,
+      "identical": 0.95
+     },
+     "pan_Guru": {
+      "mean_j": 104.01270000001531,
+      "mean_s": 1.565481460400133,
+      "new_tokens": 41.95,
+      "acceptance": 0.03923357664233577,
+      "identical": 0.95
+     },
+     "tam_Taml": {
+      "mean_j": 106.00559999999241,
+      "mean_s": 1.5968295696999122,
+      "new_tokens": 51.1,
+      "acceptance": 0.13770053475935828,
+      "identical": 0.7
+     },
+     "tel_Telu": {
+      "mean_j": 102.50609999998706,
+      "mean_s": 1.5435052677503336,
+      "new_tokens": 42.8,
+      "acceptance": 0.05,
+      "identical": 0.95
+     }
+    },
+    "gap": 1.2824257112620931,
+    "identical_total": "201/220",
+    "total_j": 22730.672999999835,
+    "gap_reduction_pct": 6.14869048801815,
+    "gap_reduction_ci95": [
+     -0.8468148041864983,
+     12.632932532067592
+    ],
+    "energy_change_pct_indic": -6.843176966268894,
+    "energy_change_pct_english": -0.7399859222657623
+   }
+  }
+ },
+ {
+  "clean_subset": true,
+  "n_sentences_kept": 172,
+  "model": "google/gemma-4-E2B-it",
+  "draft": "google/gemma-4-E2B-it-assistant",
+  "draft_params": 77731328,
+  "unsupported": [],
+  "methods": {
+   "baseline": {
+    "per_lang": {
+     "ben_Beng": {
+      "mean_j": 150.01365000000806,
+      "mean_s": 2.6164805902998522,
+      "new_tokens": 33.95,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "eng_Latn": {
+      "mean_j": 142.44475000000094,
+      "mean_s": 2.4478075797500423,
+      "new_tokens": 31.8,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "guj_Gujr": {
+      "mean_j": 204.2626153846146,
+      "mean_s": 3.4476420366154343,
+      "new_tokens": 45.07692307692308,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "hin_Deva": {
+      "mean_j": 162.3734000000055,
+      "mean_s": 2.8384350952499515,
+      "new_tokens": 36.85,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "kan_Knda": {
+      "mean_j": 189.4882999999565,
+      "mean_s": 3.236419985199791,
+      "new_tokens": 42.3,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "mal_Mlym": {
+      "mean_j": 149.21281249999447,
+      "mean_s": 2.570495498437367,
+      "new_tokens": 33.4375,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "mar_Deva": {
+      "mean_j": 159.3031250000131,
+      "mean_s": 2.6958441239374906,
+      "new_tokens": 35.1875,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "ory_Orya": {
+      "mean_j": 147.56705555556496,
+      "mean_s": 2.4478024337225484,
+      "new_tokens": 31.77777777777778,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "pan_Guru": {
+      "mean_j": 200.00555555557366,
+      "mean_s": 3.4059825939997004,
+      "new_tokens": 44.44444444444444,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "tam_Taml": {
+      "mean_j": 152.5259411764838,
+      "mean_s": 2.6032654335295398,
+      "new_tokens": 34.05882352941177,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "tel_Telu": {
+      "mean_j": 177.1271538461487,
+      "mean_s": 3.0700830744615533,
+      "new_tokens": 40.0,
+      "acceptance": 0.0,
+      "identical": 1.0
+     }
+    },
+    "gap": 1.187744447596947,
+    "identical_total": "172/172",
+    "total_j": 27935.039000000455
+   },
+   "draft": {
+    "per_lang": {
+     "ben_Beng": {
+      "mean_j": 132.86649999998627,
+      "mean_s": 2.732753221400253,
+      "new_tokens": 34.55,
+      "acceptance": 0.08692365835222977,
+      "identical": 0.95
+     },
+     "eng_Latn": {
+      "mean_j": 102.75264999999781,
+      "mean_s": 1.963155486999949,
+      "new_tokens": 31.95,
+      "acceptance": 0.16084656084656085,
+      "identical": 0.9
+     },
+     "guj_Gujr": {
+      "mean_j": 176.11138461537374,
+      "mean_s": 3.5693822374614683,
+      "new_tokens": 45.15384615384615,
+      "acceptance": 0.08442694663167104,
+      "identical": 0.9230769230769231
+     },
+     "hin_Deva": {
+      "mean_j": 125.86555000000517,
+      "mean_s": 2.5427406322502977,
+      "new_tokens": 36.9,
+      "acceptance": 0.12449310624493107,
+      "identical": 0.9
+     },
+     "kan_Knda": {
+      "mean_j": 173.26380000001518,
+      "mean_s": 3.528882169100325,
+      "new_tokens": 42.3,
+      "acceptance": 0.07151095732410612,
+      "identical": 1.0
+     },
+     "mal_Mlym": {
+      "mean_j": 94.46274999999878,
+      "mean_s": 1.8913050586874078,
+      "new_tokens": 33.625,
+      "acceptance": 0.1928374655647383,
+      "identical": 0.8125
+     },
+     "mar_Deva": {
+      "mean_j": 133.51131249998434,
+      "mean_s": 2.6463942186247777,
+      "new_tokens": 35.1875,
+      "acceptance": 0.09990253411306042,
+      "identical": 1.0
+     },
+     "ory_Orya": {
+      "mean_j": 42.85788888889106,
+      "mean_s": 0.7636054738891794,
+      "new_tokens": 31.77777777777778,
+      "acceptance": 0.738562091503268,
+      "identical": 1.0
+     },
+     "pan_Guru": {
+      "mean_j": 141.7311111111194,
+      "mean_s": 2.9761402377775488,
+      "new_tokens": 44.55555555555556,
+      "acceptance": 0.13580246913580246,
+      "identical": 0.8888888888888888
+     },
+     "tam_Taml": {
+      "mean_j": 129.76376470586504,
+      "mean_s": 2.5920425730589214,
+      "new_tokens": 34.11764705882353,
+      "acceptance": 0.09691011235955056,
+      "identical": 0.9411764705882353
+     },
+     "tel_Telu": {
+      "mean_j": 135.7606923076987,
+      "mean_s": 2.739469336461368,
+      "new_tokens": 47.30769230769231,
+      "acceptance": 0.18192352259559674,
+      "identical": 0.8461538461538461
+     }
+    },
+    "gap": 1.251738766960234,
+    "identical_total": "159/172",
+    "total_j": 20917.259999999427,
+    "gap_reduction_pct": -5.387886215150136,
+    "gap_reduction_ci95": [
+     -18.746475754447818,
+     6.7974804270932125
+    ],
+    "energy_change_pct_indic": -23.97835240326621,
+    "energy_change_pct_english": -27.86490902613319
+   },
+   "prompt_lookup": {
+    "per_lang": {
+     "ben_Beng": {
+      "mean_j": 120.08930000001564,
+      "mean_s": 2.0182789526001215,
+      "new_tokens": 33.95,
+      "acceptance": 0.17731277533039647,
+      "identical": 1.0
+     },
+     "eng_Latn": {
+      "mean_j": 129.40719999999857,
+      "mean_s": 2.2058380813502483,
+      "new_tokens": 32.0,
+      "acceptance": 0.05255878284923928,
+      "identical": 0.95
+     },
+     "guj_Gujr": {
+      "mean_j": 154.39715384616733,
+      "mean_s": 2.6065273568461773,
+      "new_tokens": 45.15384615384615,
+      "acceptance": 0.13321647677475898,
+      "identical": 0.9230769230769231
+     },
+     "hin_Deva": {
+      "mean_j": 138.94044999998877,
+      "mean_s": 2.374392847049785,
+      "new_tokens": 36.9,
+      "acceptance": 0.10822147651006711,
+      "identical": 0.9
+     },
+     "kan_Knda": {
+      "mean_j": 151.67249999998603,
+      "mean_s": 2.5473287943994363,
+      "new_tokens": 42.4,
+      "acceptance": 0.14348462664714495,
+      "identical": 0.9
+     },
+     "mal_Mlym": {
+      "mean_j": 72.46231249999983,
+      "mean_s": 1.2256643604373494,
+      "new_tokens": 33.125,
+      "acceptance": 0.3954802259887006,
+      "identical": 0.75
+     },
+     "mar_Deva": {
+      "mean_j": 127.52831249999144,
+      "mean_s": 2.144477779187696,
+      "new_tokens": 35.3125,
+      "acceptance": 0.14351851851851852,
+      "identical": 0.9375
+     },
+     "ory_Orya": {
+      "mean_j": 19.422722222205874,
+      "mean_s": 0.31394781199964605,
+      "new_tokens": 31.77777777777778,
+      "acceptance": 0.7723076923076924,
+      "identical": 1.0
+     },
+     "pan_Guru": {
+      "mean_j": 124.15688888887719,
+      "mean_s": 2.0709939333333347,
+      "new_tokens": 44.55555555555556,
+      "acceptance": 0.15384615384615385,
+      "identical": 0.8888888888888888
+     },
+     "tam_Taml": {
+      "mean_j": 108.48782352940864,
+      "mean_s": 1.8662560899411962,
+      "new_tokens": 34.411764705882355,
+      "acceptance": 0.17751479289940827,
+      "identical": 0.9411764705882353
+     },
+     "tel_Telu": {
+      "mean_j": 117.05646153845682,
+      "mean_s": 1.9496297968458889,
+      "new_tokens": 40.07692307692308,
+      "acceptance": 0.2558746736292428,
+      "identical": 0.9230769230769231
+     }
+    },
+    "gap": 0.8764689484241295,
+    "identical_total": "159/172",
+    "total_j": 19325.52499999944,
+    "gap_reduction_pct": 26.207278830272983,
+    "gap_reduction_ci95": [
+     13.068963195097341,
+     36.03224413633935
+    ],
+    "energy_change_pct_indic": -32.96131007316922,
+    "energy_change_pct_english": -9.152706575709024
+   }
+  }
+ },
+ {
+  "clean_subset": true,
+  "n_sentences_kept": 71,
+  "model": "Qwen/Qwen3-4B",
+  "draft": "Qwen/Qwen3-0.6B",
+  "draft_params": 596049920,
+  "unsupported": [],
+  "methods": {
+   "baseline": {
+    "per_lang": {
+     "ben_Beng": {
+      "mean_j": 473.5819999999884,
+      "mean_s": 7.222254120333067,
+      "new_tokens": 116.0,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "eng_Latn": {
+      "mean_j": 133.5249444444651,
+      "mean_s": 2.028386489388342,
+      "new_tokens": 31.77777777777778,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "guj_Gujr": {
+      "mean_j": 567.1506000000518,
+      "mean_s": 8.607638989800034,
+      "new_tokens": 139.8,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "hin_Deva": {
+      "mean_j": 436.6988999999827,
+      "mean_s": 6.6392122351999205,
+      "new_tokens": 107.2,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "kan_Knda": {
+      "mean_j": 148.05566666667195,
+      "mean_s": 2.2227543519996593,
+      "new_tokens": 35.0,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "mal_Mlym": {
+      "mean_j": 566.8509999999466,
+      "mean_s": 8.593762106667176,
+      "new_tokens": 137.66666666666666,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "mar_Deva": {
+      "mean_j": 361.8242857142385,
+      "mean_s": 5.481134274571169,
+      "new_tokens": 88.14285714285714,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "ory_Orya": {
+      "mean_j": 645.6699999999255,
+      "mean_s": 9.802850082000077,
+      "new_tokens": 157.0,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "pan_Guru": {
+      "mean_j": 544.7548333332912,
+      "mean_s": 8.275932594167292,
+      "new_tokens": 133.66666666666666,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "tam_Taml": {
+      "mean_j": 509.36519999995363,
+      "mean_s": 7.7069722714000815,
+      "new_tokens": 125.0,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "tel_Telu": {
+      "mean_j": 542.673749999929,
+      "mean_s": 8.291457899998932,
+      "new_tokens": 134.0,
+      "acceptance": 0.0,
+      "identical": 1.0
+     }
+    },
+    "gap": 3.5923072319337037,
+    "identical_total": "71/71",
+    "total_j": 27177.638999999035
+   },
+   "draft": {
+    "per_lang": {
+     "ben_Beng": {
+      "mean_j": 939.3993333333378,
+      "mean_s": 17.347317382555453,
+      "new_tokens": 141.11111111111111,
+      "acceptance": 0.3194600674915636,
+      "identical": 0.5555555555555556
+     },
+     "eng_Latn": {
+      "mean_j": 500.80461111110503,
+      "mean_s": 8.884060793277968,
+      "new_tokens": 101.0,
+      "acceptance": 0.507380073800738,
+      "identical": 0.2777777777777778
+     },
+     "guj_Gujr": {
+      "mean_j": 908.2010000000475,
+      "mean_s": 16.43267834640137,
+      "new_tokens": 143.8,
+      "acceptance": 0.3392461197339246,
+      "identical": 0.6
+     },
+     "hin_Deva": {
+      "mean_j": 658.7497000000207,
+      "mean_s": 11.713927491799405,
+      "new_tokens": 121.2,
+      "acceptance": 0.4247104247104247,
+      "identical": 0.7
+     },
+     "kan_Knda": {
+      "mean_j": 363.09133333328646,
+      "mean_s": 6.27686058633238,
+      "new_tokens": 79.66666666666667,
+      "acceptance": 0.5830388692579506,
+      "identical": 0.3333333333333333
+     },
+     "mal_Mlym": {
+      "mean_j": 898.9539999999494,
+      "mean_s": 16.019975950666776,
+      "new_tokens": 142.33333333333334,
+      "acceptance": 0.3524173027989822,
+      "identical": 0.6666666666666666
+     },
+     "mar_Deva": {
+      "mean_j": 776.478714285751,
+      "mean_s": 14.28503982985733,
+      "new_tokens": 104.85714285714286,
+      "acceptance": 0.2657766990291262,
+      "identical": 0.8571428571428571
+     },
+     "ory_Orya": {
+      "mean_j": 897.1439999999711,
+      "mean_s": 17.461114460000317,
+      "new_tokens": 157.0,
+      "acceptance": 0.3741721854304636,
+      "identical": 1.0
+     },
+     "pan_Guru": {
+      "mean_j": 1145.1471666666719,
+      "mean_s": 21.27356593833368,
+      "new_tokens": 138.33333333333334,
+      "acceptance": 0.2216589861751152,
+      "identical": 0.8333333333333334
+     },
+     "tam_Taml": {
+      "mean_j": 989.7306000000565,
+      "mean_s": 18.166227876600168,
+      "new_tokens": 125.0,
+      "acceptance": 0.2314266929651545,
+      "identical": 1.0
+     },
+     "tel_Telu": {
+      "mean_j": 1077.2270000000426,
+      "mean_s": 19.721960278750885,
+      "new_tokens": 148.75,
+      "acceptance": 0.2913105413105413,
+      "identical": 0.5
+     }
+    },
+    "gap": 1.7280437630992962,
+    "identical_total": "42/71",
+    "total_j": 54844.654000000795,
+    "gap_reduction_pct": 51.89599186456256,
+    "gap_reduction_ci95": [
+     35.434092951776286,
+     63.09765681179657
+    ],
+    "energy_change_pct_indic": 80.42103808680365,
+    "energy_change_pct_english": 275.06445944966987
+   },
+   "prompt_lookup": {
+    "per_lang": {
+     "ben_Beng": {
+      "mean_j": 419.3065555555772,
+      "mean_s": 6.409209267000026,
+      "new_tokens": 116.11111111111111,
+      "acceptance": 0.02851445663010967,
+      "identical": 0.8888888888888888
+     },
+     "eng_Latn": {
+      "mean_j": 127.69366666665559,
+      "mean_s": 1.9409598609446321,
+      "new_tokens": 31.666666666666668,
+      "acceptance": 0.030405405405405407,
+      "identical": 0.8888888888888888
+     },
+     "guj_Gujr": {
+      "mean_j": 483.369799999916,
+      "mean_s": 7.380035017801129,
+      "new_tokens": 146.6,
+      "acceptance": 0.03903441191576785,
+      "identical": 0.8
+     },
+     "hin_Deva": {
+      "mean_j": 404.1457999999751,
+      "mean_s": 6.157645729600153,
+      "new_tokens": 107.2,
+      "acceptance": 0.020338300443012484,
+      "identical": 1.0
+     },
+     "kan_Knda": {
+      "mean_j": 151.73066666671852,
+      "mean_s": 2.3244375879991517,
+      "new_tokens": 79.66666666666667,
+      "acceptance": 0.1808066759388039,
+      "identical": 0.3333333333333333
+     },
+     "mal_Mlym": {
+      "mean_j": 400.17433333338704,
+      "mean_s": 6.1082185456665075,
+      "new_tokens": 137.66666666666666,
+      "acceptance": 0.07541567695961995,
+      "identical": 1.0
+     },
+     "mar_Deva": {
+      "mean_j": 356.01700000004246,
+      "mean_s": 5.448693767857809,
+      "new_tokens": 104.85714285714286,
+      "acceptance": 0.044626021370207415,
+      "identical": 0.8571428571428571
+     },
+     "ory_Orya": {
+      "mean_j": 420.41700000001583,
+      "mean_s": 6.390807570000106,
+      "new_tokens": 157.0,
+      "acceptance": 0.08139534883720931,
+      "identical": 1.0
+     },
+     "pan_Guru": {
+      "mean_j": 452.58100000002497,
+      "mean_s": 6.907319104332298,
+      "new_tokens": 133.66666666666666,
+      "acceptance": 0.03555045871559633,
+      "identical": 1.0
+     },
+     "tam_Taml": {
+      "mean_j": 450.1163999999873,
+      "mean_s": 6.880870579600741,
+      "new_tokens": 137.8,
+      "acceptance": 0.04590372967803634,
+      "identical": 0.8
+     },
+     "tel_Telu": {
+      "mean_j": 432.8357500000566,
+      "mean_s": 6.6141460684993945,
+      "new_tokens": 145.5,
+      "acceptance": 0.05661040787623066,
+      "identical": 0.75
+     }
+    },
+    "gap": 3.1095467842749023,
+    "identical_total": "62/71",
+    "total_j": 23796.21400000027,
+    "gap_reduction_pct": 13.438729387267253,
+    "gap_reduction_ci95": [
+     6.339784912976162,
+     19.615554079348282
+    ],
+    "energy_change_pct_indic": -17.219017900721166,
+    "energy_change_pct_english": -4.36718232841865
+   }
+  }
+ },
+ {
+  "clean_subset": true,
+  "n_sentences_kept": 216,
+  "model": "sarvamai/sarvam-1",
+  "draft": null,
+  "draft_params": null,
+  "unsupported": [],
+  "methods": {
+   "baseline": {
+    "per_lang": {
+     "ben_Beng": {
+      "mean_j": 90.31094444444817,
+      "mean_s": 1.369014920777368,
+      "new_tokens": 36.27777777777778,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "eng_Latn": {
+      "mean_j": 82.82589999999618,
+      "mean_s": 1.2551360756501708,
+      "new_tokens": 33.25,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "guj_Gujr": {
+      "mean_j": 114.08847368422185,
+      "mean_s": 1.7367916130001264,
+      "new_tokens": 46.26315789473684,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "hin_Deva": {
+      "mean_j": 98.49065000000992,
+      "mean_s": 1.467544352799996,
+      "new_tokens": 38.95,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "kan_Knda": {
+      "mean_j": 113.81904999998514,
+      "mean_s": 1.7318185161000657,
+      "new_tokens": 45.95,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "mal_Mlym": {
+      "mean_j": 124.29915000001783,
+      "mean_s": 1.896181712500038,
+      "new_tokens": 50.45,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "mar_Deva": {
+      "mean_j": 91.33157894735862,
+      "mean_s": 1.3924048872630872,
+      "new_tokens": 36.8421052631579,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "ory_Orya": {
+      "mean_j": 118.128549999994,
+      "mean_s": 1.7954095891995165,
+      "new_tokens": 47.75,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "pan_Guru": {
+      "mean_j": 104.07714999999735,
+      "mean_s": 1.5772871738501635,
+      "new_tokens": 41.8,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "tam_Taml": {
+      "mean_j": 114.24790000000503,
+      "mean_s": 1.7285029775501244,
+      "new_tokens": 46.2,
+      "acceptance": 0.0,
+      "identical": 1.0
+     },
+     "tel_Telu": {
+      "mean_j": 103.67735000000103,
+      "mean_s": 1.5789347938999527,
+      "new_tokens": 41.95,
+      "acceptance": 0.0,
+      "identical": 1.0
+     }
+    },
+    "gap": 1.294849554397946,
+    "identical_total": "216/216",
+    "total_j": 22719.892000000225
+   },
+   "prompt_lookup": {
+    "per_lang": {
+     "ben_Beng": {
+      "mean_j": 90.56172222223056,
+      "mean_s": 1.3799177453885123,
+      "new_tokens": 36.111111111111114,
+      "acceptance": 0.02617801047120419,
+      "identical": 0.9444444444444444
+     },
+     "eng_Latn": {
+      "mean_j": 82.21300000000629,
+      "mean_s": 1.2336172912499932,
+      "new_tokens": 33.25,
+      "acceptance": 0.037937743190661476,
+      "identical": 1.0
+     },
+     "guj_Gujr": {
+      "mean_j": 112.5536842105273,
+      "mean_s": 1.7148011535264231,
+      "new_tokens": 46.21052631578947,
+      "acceptance": 0.03600900225056264,
+      "identical": 0.8421052631578947
+     },
+     "hin_Deva": {
+      "mean_j": 93.38434999999008,
+      "mean_s": 1.4319920211000863,
+      "new_tokens": 38.85,
+      "acceptance": 0.04418394950405771,
+      "identical": 0.85
+     },
+     "kan_Knda": {
+      "mean_j": 112.55599999999394,
+      "mean_s": 1.6998684102997685,
+      "new_tokens": 45.95,
+      "acceptance": 0.039511494252873564,
+      "identical": 1.0
+     },
+     "mal_Mlym": {
+      "mean_j": 123.11600000000325,
+      "mean_s": 1.8700971109999045,
+      "new_tokens": 50.45,
+      "acceptance": 0.04283604135893648,
+      "identical": 1.0
+     },
+     "mar_Deva": {
+      "mean_j": 91.21636842104827,
+      "mean_s": 1.3813972495260571,
+      "new_tokens": 36.89473684210526,
+      "acceptance": 0.03273809523809524,
+      "identical": 0.8421052631578947
+     },
+     "ory_Orya": {
+      "mean_j": 119.06584999999032,
+      "mean_s": 1.8177292282500275,
+      "new_tokens": 47.7,
+      "acceptance": 0.027065527065527065,
+      "identical": 0.95
+     },
+     "pan_Guru": {
+      "mean_j": 104.01270000001531,
+      "mean_s": 1.565481460400133,
+      "new_tokens": 41.95,
+      "acceptance": 0.03923357664233577,
+      "identical": 0.95
+     },
+     "tam_Taml": {
+      "mean_j": 106.00559999999241,
+      "mean_s": 1.5968295696999122,
+      "new_tokens": 51.1,
+      "acceptance": 0.13770053475935828,
+      "identical": 0.7
+     },
+     "tel_Telu": {
+      "mean_j": 102.50609999998706,
+      "mean_s": 1.5435052677503336,
+      "new_tokens": 42.8,
+      "acceptance": 0.05,
+      "identical": 0.95
+     }
+    },
+    "gap": 1.2832257366276596,
+    "identical_total": "197/216",
+    "total_j": 22358.93399999966,
+    "gap_reduction_pct": 0.8976963949831943,
+    "gap_reduction_ci95": [
+     -4.6111323097496815,
+     5.655150581909407
+    ],
+    "energy_change_pct_indic": -1.6310394903013892,
+    "energy_change_pct_english": -0.7399859222657623
+   }
+  }
+ }
+]
